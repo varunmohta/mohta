@@ -1,5 +1,5 @@
-FROM devopsedu/webapp  
+FROM php:7.0-apache  
 RUN rm /var/www/html/*
 WORKDIR /opt/workspace/edurekaproject1_Job3/website/
 COPY . /var/www/html
-EXPOSE 8081
+ENTRYPOINT service apache2 start && /bin/bash
